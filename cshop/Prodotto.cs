@@ -24,7 +24,7 @@ namespace cshop
             this.nome = nome;
             this.desrcizione = descrizione;
             this.prezzo = prezzo;
-            this.iva = iva;
+            this.iva = prezzo;
         }
         
         public int getCodice()
@@ -46,6 +46,7 @@ namespace cshop
         }
         public int getIva()
         {
+            
             return iva;
         }
         public void setCodice(int codice)
@@ -70,6 +71,20 @@ namespace cshop
         {
             this.iva = iva;
         }
+        public void StampaCalcoloIva()
+        {
+            int a = (iva * 2) / 100;
+        }
+        public void StampaCodiceRandom()
+        {
+            Random rnd = new Random();
+
+            for (int j = 0; j < 10000; j++)
+            {
+                Console.WriteLine(rnd.Next());
+            }
+
+        }
         public void StampaProdotto()
         {
             Console.WriteLine("-------" + "PRODOTTO" + "-------");
@@ -77,7 +92,7 @@ namespace cshop
             Console.WriteLine("nome: " + nome);
             Console.WriteLine("descrizione: " + desrcizione);
             Console.WriteLine("prezzo: " + prezzo);
-            Console.WriteLine("iva: " + iva);
+            Console.WriteLine("iva: " + StampaCalcoloIva);
             Console.WriteLine("----------------------");
         }
     }
